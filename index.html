@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Modal Steps</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h2>header</h2>
+
+  <div id="root"></div>
+
+</body>
+
+<script type="text/babel">
+
+class Content extends React.Component {
+  render() {
+    return (
+      <div>Your name?</div>
+    );
+  }
+}
+
+class Stages extends React.Component {
+  render() {
+    return (
+      <div>{this.props.stage}</div>
+    );
+  }
+}
+
+class Buttons extends React.Component {
+  render() {
+    return (
+      <div>
+        <button>Next</button>
+        <button>Back</button>
+      </div>
+    );
+  }
+}
+
+class ModalWindow extends React.Component {
+  render() {
+    return (
+      <div>
+        <Stages stage={this.props.questions[1].sequence}/>
+        <Content/>
+        <Buttons/>
+      </div>
+    );
+  }
+}
+
+const Questions = [
+  {sequence: "1", question: "What is you name?"},
+  {sequence: "2", question: "How did you know about us?"},
+  {sequence: "3", question: "What is your phone number?"}
+];
+
+ReactDOM.render(
+  <ModalWindow questions={Questions}/>,
+  document.getElementById('root')
+);
+
+</script>
+</html>
