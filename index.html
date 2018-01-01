@@ -21,7 +21,7 @@
 class Content extends React.Component {
   render() {
     return (
-      <div>Your name?</div>
+      <div>{this.props.content}</div>
     );
   }
 }
@@ -35,11 +35,19 @@ class Stages extends React.Component {
 }
 
 class Buttons extends React.Component {
+  next() {
+    console.log("next clicked");
+  }
+
+  previous() {
+    console.log("previous clicked");
+  }
+
   render() {
     return (
       <div>
-        <button>Next</button>
-        <button>Back</button>
+        <button onClick={this.next}>Next</button>
+        <button onClick={this.previous}>Back</button>
       </div>
     );
   }
@@ -49,8 +57,8 @@ class ModalWindow extends React.Component {
   render() {
     return (
       <div>
-        <Stages stage={this.props.questions[1].sequence}/>
-        <Content/>
+        <Stages stage={this.props.questions[0].sequence}/>
+        <Content content={this.props.questions[0].question}/>
         <Buttons/>
       </div>
     );
