@@ -35,8 +35,17 @@ class Stages extends React.Component {
 }
 
 class Buttons extends React.Component {
+  constructor(props) {
+    super(props); //?
+    this.state = {stage: 1};
+    this.next = this.next.bind(this);
+  }
+
   next() {
     console.log("next clicked");
+    //this.setState({ stage: this.state.stage + 1});  // increment state.stage
+    var stage = this.state.stage;
+    console.log(stage);
   }
 
   previous() {
@@ -46,8 +55,8 @@ class Buttons extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.next}>Next</button>
         <button onClick={this.previous}>Back</button>
+        <button onClick={this.next}>Next</button>
       </div>
     );
   }

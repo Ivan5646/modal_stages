@@ -1,3 +1,23 @@
 1) change state on click?
 2) next back buttons
 3) clickable stage numbers
+
+
+
+Problems
+
+
+
+
+Problems Solved
+- Uncaught TypeError: Cannot read property 'state' of undefined
+console.log(stage);
+next() {
+console.log("next clicked");
+//this.setState({ stage: this.state.stage + 1});  // increment state.stage
+var stage = this.state.stage; // Uncaught TypeError: Cannot read property 'state' of undefined
+console.log(stage);
+}
+
+https://stackoverflow.com/questions/45998744/react-this-state-is-undefined
+Solved by putting     this.next = this.next.bind(this);    in component constructor
