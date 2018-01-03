@@ -5,8 +5,8 @@
 
 
 Problems
-
-
+- onclick event inside one component event hanlder inside another?
+- calling inside component (but not inside any component's function) console.log("initial state"); giving Uncaught SyntaxError: Inline Babel script: Unexpected token 
 
 
 Problems Solved

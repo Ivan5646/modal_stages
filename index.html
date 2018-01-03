@@ -35,22 +35,6 @@ class Stages extends React.Component {
 }
 
 class Buttons extends React.Component {
-  constructor(props) {
-    super(props); //?
-    this.state = {stage: 1};
-    this.next = this.next.bind(this); 
-  }
-
-  next() {
-    console.log("next clicked");
-    this.setState({ stage: this.state.stage + 1});  // increment state.stage
-    console.log(this.state.stage);
-  }
-
-  previous() {
-    console.log("previous clicked");
-  }
-
   render() {
     return (
       <div>
@@ -62,10 +46,28 @@ class Buttons extends React.Component {
 }
 
 class ModalWindow extends React.Component {
+  constructor(props) {
+    super(props); //?
+    this.state = {stage: 1}
+    // this.next = this.next.bind(this); 
+  }
+
+  next() {
+    this.setState({ stage: this.state.stage + 1});  // increment state.stage
+    console.log(this.state.stage);
+  }
+
+  previous() {
+    console.log("previous clicked");
+  }
+
   render() {
+    const Stage = this.state.stage;
+    // const question = this.state.
+
     return (
       <div>
-        <Stages stage={this.props.questions[0].sequence}/>
+        <Stages stage={Stage}/>
         <Content content={this.props.questions[0].question}/>
         <Buttons/>
       </div>
