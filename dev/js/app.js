@@ -2,7 +2,7 @@
 import React, { Component, PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import Multistep from './index2.js' 
-import { steps } from './index.js'
+import { steps } from './signup/index.js'
 
 class App extends React.Component {
   render() {
