@@ -54,6 +54,10 @@ So Bucky's tuts has old syntax...
 https://stackoverflow.com/questions/30668326/what-is-the-difference-between-using-constructor-vs-getinitialstate-in-react-r
 
 
+Problems
+ - webpack scss to css. I will leave it for later.
+
+
 
 
 

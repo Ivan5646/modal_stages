@@ -6,7 +6,8 @@ class Comment extends React.Component {
       constructor(props) {
         super(props); 
         this.state = {editing: false}
-        // this.next = this.next.bind(this); 
+        this.edit = this.edit.bind(this); 
+        this.save = this.save.bind(this); 
     }
 
     // getInitialState: function () {
@@ -45,7 +46,7 @@ class Comment extends React.Component {
             </div>
         );
     }
-    
+
     render() {
         if(this.state.editing){
             return this.renderForm();
