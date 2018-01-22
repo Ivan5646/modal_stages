@@ -1,51 +1,67 @@
-var Comment = React.CreateClass({
-    getInitialState: function () {
-        return {editing: false}
-    },
-    edit: function () {
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+
+class Comment extends React.Component {
+      constructor(props) {
+        super(props); 
+        this.state = {editing: false}
+        // this.next = this.next.bind(this); 
+    }
+
+    // getInitialState: function () {
+    //     return {editing: false}
+    // }
+
+    edit() {
         this.setState({editing: true});
-    },
-    remove: function () {
+    }
+
+    remove() {
         console.log("Removing comment");
-    },
-    save: function () {
+    }
+
+    save() {
         var val = this.refs.newText.value;
         console.log("New comment: " + val);
         this.setState({editing: false});
-    },
-    renderNormal: function () {
+    }
+
+    renderNormal() {
         return (
             <div className="commentContainer">
                 <div className="commentText">{this.props.children}</div>
-                <button onclick={this.edit} className="button-primary">Edit</button>
-                <button onclick={this.remove} className="button-danger">Remove</button>
+                <button onClick={this.edit} className="button-primary">Edit</button>
+                <button onClick={this.remove} className="button-danger">Remove</button>
             </div>
         );
-    },
-    renderForm: function () {
+    }
+
+    renderForm() {
         return (
             <div className="commentContainer">
                 <textarea ref="newText" defaultvalue={this.props.children}></textarea>
-                <button onclick={this.save} className="button-success">Save</button>
+                <button onClick={this.save} className="button-success">Save</button>
             </div>
         );
-    },
-    render: function() {
+    }
+    
+    render() {
         if(this.state.editing){
             return this.renderForm();
         }else{
             return this.renderNormal();
         }
     }
-});
+}
 
 ReactDOM.render(
     <div className="board">
         <Comment>Hey my name is Bucky</Comment>
         <Comment>Beans</Comment>
         <Comment>Tuna</Comment>
-    </div>
-    document.getElementById("root");
+    </div>,
+    document.getElementById("root")
 );
 
 

@@ -49,6 +49,11 @@ the only source code?
 https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/React/005_events.html
 
 
+So Bucky's tuts has old syntax...
+
+https://stackoverflow.com/questions/30668326/what-is-the-difference-between-using-constructor-vs-getinitialstate-in-react-r
+
+
 
 
 
