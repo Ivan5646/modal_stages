@@ -34,5 +34,21 @@ stepone, steptwo, ... => index.js && miltustep.js => ../../index.js => app.js =>
 Multistep.js is the top comp which contains state... it controlls button
 
 
+Multisteps is the one way, every step has its own class with the same structure (repeatedly... wtf?). I need "do not repeat yourself" of course, and it seems that app uses React in a shitty way since its every stage is a new class... Well I can try this way anyway, because I have not found better app and I have not figured out how to do better myself.
+
+
+
+On React learning path
+Seems like with steps is too tough for me?.. 
+Bucky has too simple tutorials...? https://www.youtube.com/watch?v=TWzA2Ir1ZJc&list=PL6gx4Cwl9DGBuKtLgPR_zWYnrwv-JllpA&index=9  refs
+Ok, seems like Bucky's tuts has some good points at the end, so probably try their code out and understand what is happening in code. Yeah but no scource code available so I will have to spend a hell of a lot of time typing it? And in the end it will turn out to be a crappy tut, becasue now I can't undersstand it thoroughly.
+
+https://youtu.be/szmS_M-BMls?t=1m6s using function in one comp from another comp?
+
+the only source code?
+https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/React/005_events.html
+
+
+
 
 
