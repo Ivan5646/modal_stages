@@ -56,14 +56,27 @@ class Comment extends React.Component {
     }
 }
 
-ReactDOM.render(
-    <div className="board">
-        <Comment>Hey my name is Bucky</Comment>
-        <Comment>Beans</Comment>
-        <Comment>Tuna</Comment>
-    </div>,
-    document.getElementById("root")
-);
+class Board extends React.Component {
+    constructor(props) {
+        super(props); 
+        this.state = {comments: [   // "return" in tutorial
+                "I like bacon",
+                "Want to get an icecream?",
+                "Ok, we have enough comment now"
+        ]}
+    }
+
+    render() {
+        <div className="board">
+            <Comment>Hey my name is Bucky</Comment>
+            <Comment>Beans</Comment>
+            <Comment>Tuna</Comment>
+        </div>
+    }
+}
+
+ReactDOM.render(<Board />, document.getElementById("root"));
 
 
 //https://www.youtube.com/watch?v=bBiITqaO08E&list=PL6gx4Cwl9DGBuKtLgPR_zWYnrwv-JllpA&index=10   10 - Multiple Child Components
+// stopped at https://youtu.be/bBiITqaO08E?t=6m7s
