@@ -65,9 +65,11 @@ class Board extends React.Component {
     render() {
         return  (
             <div className="board">
-                <Comment>Hey my name is Bucky</Comment>
-                <Comment>Beans</Comment>
-                <Comment>Tuna</Comment>
+                {
+                    this.state.comments.map(function(text, i) {
+                        return (<Comment>{text}</Comment>);
+                    })
+                }
             </div>
         )
     }
