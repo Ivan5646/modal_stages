@@ -62,10 +62,17 @@ class Comment extends React.Component {
 class Board extends React.Component {
     constructor(props) {
         super(props); 
-        this.state = {comments: ["I like bacon", "Want to get an icecream?", "Ok, we have enough comment now"]}
+        this.state = {comments: []}
         this.updateComment = this.updateComment.bind(this);
         this.removeComment = this.removeComment.bind(this);
         this.eachComment = this.eachComment.bind(this);
+        this.add = this.add.bind(this);
+    }
+
+    add(text) {
+        var arr = this.state.comments;
+        arr.push(text);
+        this.setState({comments: arr})
     }
 
     removeComment(i) {
@@ -92,11 +99,15 @@ class Board extends React.Component {
 
     render() {
         return  (
-            <div className="board">
-                {
-                    this.state.comments.map(this.eachComment)
-                }
+            <div>
+                <button onClick={this.add.bind(null, "default text")} className="button-info create">Add New</button>
+                <div className="board">
+                    {
+                        this.state.comments.map(this.eachComment)
+                    }
+                </div>
             </div>
+
         )
     }
 
