@@ -58,6 +58,10 @@ Problems
  - webpack scss to css. I will leave it for later.
 
 
+ Stopped at
+ https://www.youtube.com/watch?v=GBoJOVNzc_0  11 - Updating State and Removing Components
+
+
 
 
 

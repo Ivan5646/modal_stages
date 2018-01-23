@@ -62,13 +62,15 @@ class Board extends React.Component {
         this.state = {comments: ["I like bacon", "Want to get an icecream?", "Ok, we have enough comment now"]}
     }
 
+    eachComment(text, i) {
+        return (<Comment key={i}>{text}</Comment>);
+    }
+
     render() {
         return  (
             <div className="board">
                 {
-                    this.state.comments.map(function(text, i) {
-                        return (<Comment>{text}</Comment>);
-                    })
+                    this.state.comments.map(this.eachComment)
                 }
             </div>
         )
@@ -78,6 +80,3 @@ class Board extends React.Component {
 
 ReactDOM.render(<Board />, document.getElementById("root"));
 
-
-//https://www.youtube.com/watch?v=bBiITqaO08E&list=PL6gx4Cwl9DGBuKtLgPR_zWYnrwv-JllpA&index=10   10 - Multiple Child Components
-// stopped at https://youtu.be/bBiITqaO08E?t=6m7s
