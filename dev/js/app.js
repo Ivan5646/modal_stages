@@ -20,11 +20,13 @@ class Comment extends React.Component {
 
     remove() {
         console.log("Removing comment");
+        this.props.deleteFromBoard(this.props.index)
     }
 
     save() {
-        var val = this.refs.newText.value;
-        console.log("New comment: " + val);
+        this.props.updateCommentText(this.refs.newText.value, this.props.index);
+        // var val = this.refs.newText.value;
+        // console.log("New comment: " + val);
         this.setState({editing: false});
     }
 
@@ -60,10 +62,31 @@ class Board extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {comments: ["I like bacon", "Want to get an icecream?", "Ok, we have enough comment now"]}
+        this.updateComment = this.updateComment.bind(this);
+        this.removeComment = this.removeComment.bind(this);
+        this.eachComment = this.eachComment.bind(this);
+    }
+
+    removeComment(i) {
+        console.log("Removing comment: " + i);
+        var arr = this.state.comments;
+        arr.splice(i, 1);
+        this.setState({comments: arr})
+    }
+
+    updateComment(newText, i) {
+        console.log("Updating comment");
+        var arr = this.state.comments;
+        arr[i] = newText;
+        this.setState({comments: arr})
     }
 
     eachComment(text, i) {
-        return (<Comment key={i}>{text}</Comment>);
+        return (
+            <Comment key={i} index={i} updateCommentText={this.updateComment.bind(this)} deleteFromBoard={Board.removeComment}>
+                {text}
+            </Comment>
+            );
     }
 
     render() {
