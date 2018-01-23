@@ -59,20 +59,19 @@ class Comment extends React.Component {
 class Board extends React.Component {
     constructor(props) {
         super(props); 
-        this.state = {comments: [   // "return" in tutorial
-                "I like bacon",
-                "Want to get an icecream?",
-                "Ok, we have enough comment now"
-        ]}
+        this.state = {comments: ["I like bacon", "Want to get an icecream?", "Ok, we have enough comment now"]}
     }
 
     render() {
-        <div className="board">
-            <Comment>Hey my name is Bucky</Comment>
-            <Comment>Beans</Comment>
-            <Comment>Tuna</Comment>
-        </div>
+        return  (
+            <div className="board">
+                <Comment>Hey my name is Bucky</Comment>
+                <Comment>Beans</Comment>
+                <Comment>Tuna</Comment>
+            </div>
+        )
     }
+
 }
 
 ReactDOM.render(<Board />, document.getElementById("root"));
