@@ -8,6 +8,7 @@ class Comment extends React.Component {
         this.state = {editing: false}
         this.edit = this.edit.bind(this); 
         this.save = this.save.bind(this); 
+        this.remove = this.remove.bind(this); 
     }
 
     // getInitialState: function () {
@@ -20,11 +21,11 @@ class Comment extends React.Component {
 
     remove() {
         console.log("Removing comment");
-        this.props.deleteFromBoard(this.props.index)
+        this.props.deleteFromBoard(this.props.index);
     }
 
     save() {
-        this.props.updateCommentText(this.refs.newText.value, this.props.index);
+        this.props.updateCommentText(this.refs.newText.value, this.props.index);  //Board.updateComment(newText, i)
         // var val = this.refs.newText.value;
         // console.log("New comment: " + val);
         this.setState({editing: false});
@@ -43,7 +44,7 @@ class Comment extends React.Component {
     renderForm() {
         return (
             <div className="commentContainer">
-                <textarea ref="newText" defaultvalue={this.props.children}></textarea>
+                <textarea ref="newText" defaultValue={this.props.children}></textarea>
                 <button onClick={this.save} className="button-success">Save</button>
             </div>
         );
@@ -83,7 +84,7 @@ class Board extends React.Component {
 
     eachComment(text, i) {
         return (
-            <Comment key={i} index={i} updateCommentText={this.updateComment.bind(this)} deleteFromBoard={Board.removeComment}>
+            <Comment key={i} index={i} updateCommentText={this.updateComment.bind(this)} deleteFromBoard={this.removeComment.bind(this)}>
                 {text}
             </Comment>
             );
