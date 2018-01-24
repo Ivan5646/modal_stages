@@ -1,4 +1,4 @@
-1) change state on click?
+1) change state on click? to display different contnt
 2) next back buttons
 3) clickable stage numbers
 
@@ -6,6 +6,10 @@ So just follow the react_steps structure?
 
 
 remembering the problem... The problem is how do I keep the state in top component if in buttons comp there were click handlers that were supposed to change the state, they could change it if the state was inside buttons comp of course, but otherwise? What I need is to keep the state in the top comp, so for ex. to change the displayed stage which is different comp. 
+
+
+Questions
+- how to add css class to a component
 
 Problems
 - onclick event inside one component event hanlder inside another?

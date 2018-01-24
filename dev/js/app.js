@@ -13,7 +13,7 @@ class Content extends React.Component {
 class Stages extends React.Component {
   render() {
     return (
-      <div>{this.props.stage}</div>
+      <div className="stage">{this.props.stage}</div>
     );
   }
 }
@@ -33,12 +33,13 @@ class Buttons extends React.Component {
     }
 
     nextHandler() {
-        // console.log("nextBtn");
+        // console.log("nextHandler");
         this.props.nextBtn();
     }
 
     previousHandler() {
-        // console.log("previousBtn");
+        // console.log("previousHandler");
+        this.props.previousBtn();
     }
 
     render() {
@@ -58,17 +59,16 @@ class ModalWindow extends React.Component {
         this.next = this.next.bind(this); 
         this.previous = this.previous.bind(this); 
     }
-
-    // Need to change state after buttons click. Need to use click handlers from Buttons to change state here, 
+ 
     next() {
         this.setState({ stage: this.state.stage + 1});  // increment state.stage
-        console.log(this.state.stage);
+        console.log("next: " + this.state.stage);
     }
 
     previous() {
-        console.log("previous clicked");
+        this.setState({ stage: this.state.stage - 1});
+        console.log("previous: " + this.state.stage);
     }
-
 
     render() {
         const Stage = this.state.stage;
