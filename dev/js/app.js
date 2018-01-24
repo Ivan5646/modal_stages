@@ -26,25 +26,24 @@ function nextStage(currentStage) {
 
 class Buttons extends React.Component {
     constructor(props) {
-        super(props); //?
+        super(props); 
         this.state = {stage: 1}
-        // this.next = this.next.bind(this); 
     }
 
-    next() {
-        this.setState({ stage: this.state.stage + 1});  // increment state.stage
-        console.log(this.state.stage);
-      }
+    nextHandler() {
+        // console.log("nextBtn");
+        this.props.nextBtn();
+    }
 
-      previous() {
-        console.log("previous clicked");
-      }
+    previousHandler() {
+        // console.log("previousBtn");
+    }
 
     render() {
         return (
             <div>
-                <button onClick={nextStage}>Back</button>
-                <button onClick={this.next}>Next</button>
+                <button onClick={this.previousBtn}>Back</button>
+                <button onClick={this.nextBtn}>Next</button>
             </div>
         );
     }
@@ -54,8 +53,20 @@ class ModalWindow extends React.Component {
     constructor(props) {
         super(props); //?
         this.state = {stage: 1}
-        // this.next = this.next.bind(this); 
+        this.next = this.next.bind(this); 
+        this.previous = this.previous.bind(this); 
     }
+
+    // Need to change state after buttons click. Need to use click handlers from Buttons to change state here, 
+    next() {
+        this.setState({ stage: this.state.stage + 1});  // increment state.stage
+        console.log(this.state.stage);
+    }
+
+    previous() {
+        console.log("previous clicked");
+    }
+
 
     render() {
         const Stage = this.state.stage;
@@ -65,7 +76,7 @@ class ModalWindow extends React.Component {
             <div>
                 <Stages stage={Stage}/>
                 <Content content={this.props.questions[0].question}/>
-                <Buttons/>
+                <Buttons nextBtn={this.next.bind(this)} previousBtn={this.previous.bind(this)} />
             </div>
         );
     }

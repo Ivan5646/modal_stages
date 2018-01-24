@@ -43,12 +43,62 @@ Seems like with steps is too tough for me?..
 Bucky has too simple tutorials...? https://www.youtube.com/watch?v=TWzA2Ir1ZJc&list=PL6gx4Cwl9DGBuKtLgPR_zWYnrwv-JllpA&index=9  refs
 Ok, seems like Bucky's tuts has some good points at the end, so probably try their code out and understand what is happening in code. Yeah but no scource code available so I will have to spend a hell of a lot of time typing it? And in the end it will turn out to be a crappy tut, becasue now I can't undersstand it thoroughly.
 
-https://youtu.be/szmS_M-BMls?t=1m6s using function in one comp from another comp?
+Ok, figured out how to pass a function from parent comp to child comp from Bucky's tut. Next: either write my modal steps, either watch Bucky's redux. I think I should try modal steps first and see how I go, if not then redux or maybe something easier to write myself.
 
+
+------Bucky Tutorials Branch-----
 the only source code?
 https://github.com/buckyroberts/Source-Code-from-Tutorials/blob/master/React/005_events.html
 
+So Bucky's tuts has old syntax...
+
+https://stackoverflow.com/questions/30668326/what-is-the-difference-between-using-constructor-vs-getinitialstate-in-react-r
+
+App Structure.
+Comment comp is a child comp. Board is a parent comp.
+
+Problem
+- Uncaught TypeError: this.props.updateCommentText is not a function. Well how to pass a function as props from parent comp to child comp. It is possible?
+? https://stackoverflow.com/questions/32317154/react-uncaught-typeerror-cannot-read-property-setstate-of-undefined <button onClick={this.delta.bind(this)}>+</button>
+
+- updateCommentText={this.updateComment}  Cannot read property 'updateComment' of undefined, no error if "this" replaced by class Name
+Solved by
+this.eachComment = this.eachComment.bind(this);  in constructor 
+{this.updateComment.bind(this)} in <Comment/> instead of {Board.updateComment.bind(this)}
+
+
+- webpack scss to css. I will leave it for later. For now just use css.
+
+
+
+ Stopped at
+https://www.youtube.com/watch?v=szmS_M-BMls 12 - Passing Function as Props  4:42
 
 
 
 
+
+
+
+
+ Notes to React reference
+ https://youtu.be/GBoJOVNzc_0?t=3m12s  child component
+
+ https://youtu.be/szmS_M-BMls?t=1m6s using function in one comp from another comp.
+ Passing a function from parent comp to chid comp https://github.com/Ivan5646/modal_stages/commit/0a956d1f62150b8194e00b9c7548c59969394e92
+
+// child Comment insdie parent Board
+<Comment key={i} index={i} updateCommentText={this.updateComment.bind(this)} deleteFromBoard={this.removeComment.bind(this)}>
+	{text}
+</Comment>
+
+//child
+save() {
+    this.props.updateCommentText(this.refs.newText.value, this.props.index);  //Board.updateComment(newText, i)
+    this.setState({editing: false});
+}
+
+
+//
+bind 
+means binds class "this" to handler in a simple situation like my modal steps
