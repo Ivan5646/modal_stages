@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 class Content extends React.Component {
     render() {
         return (
-            <div>{this.props.content}</div>
+            <div className="content">{this.props.content}</div>
         );
     }
 }
@@ -55,14 +55,21 @@ class Buttons extends React.Component {
 class ModalWindow extends React.Component {
     constructor(props) {
         super(props); //?
-        this.state = {stage: 1}
+        this.state = {stage: 1, question: props.questions[0].question}  // need to pass const Questions here...? have to pass the whole array and change state to display required question. Now const Quesitons belongs to props.questions
+        // this.state = {mystate: props.questions} // worked
         this.next = this.next.bind(this); 
         this.previous = this.previous.bind(this); 
     }
- 
+     
     next() {
-        this.setState({ stage: this.state.stage + 1});  // increment state.stage
-        console.log("next: " + this.state.stage);
+        // this.setState({ stage: this.state.stage + 1});  // increment state.stage
+        // console.log("next: " + this.state.stage);
+        // console.log("state question: " + this.state.question);
+
+        // console.log(this.state);
+
+        const myQuestion = this.props.questions[0];
+        console.log(myQuestion);
     }
 
     previous() {
