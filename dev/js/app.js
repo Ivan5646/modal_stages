@@ -28,6 +28,8 @@ class Buttons extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {stage: 1}
+        this.nextHandler = this.nextHandler.bind(this); 
+        this.previousHandler = this.previousHandler.bind(this); 
     }
 
     nextHandler() {
@@ -42,8 +44,8 @@ class Buttons extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.previousBtn}>Back</button>
-                <button onClick={this.nextBtn}>Next</button>
+                <button onClick={this.previousHandler}>Back</button>
+                <button onClick={this.nextHandler}>Next</button>
             </div>
         );
     }
