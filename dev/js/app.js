@@ -57,6 +57,9 @@ class ModalWindow extends React.Component {
         super(props); //?
         this.state = {stage: 1, question: props.questions[0].question}  // need to pass const Questions here...? have to pass the whole array and change state to display required question. Now const Quesitons belongs to props.questions
         // this.state = {mystate: props.questions} // worked
+
+        this.state = {stage: props.questions.sequence}
+
         this.next = this.next.bind(this); 
         this.previous = this.previous.bind(this); 
     }
