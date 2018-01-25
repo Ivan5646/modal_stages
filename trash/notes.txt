@@ -62,6 +62,9 @@ App Structure.
 Comment comp is a child comp. Board is a parent comp.
 
 Problem
+- Have to pass data array to top comp (ModalWindow) state to use it the same way as the stage.
+https://stackoverflow.com/questions/34117735/convert-array-of-objects-to-object-of-objects
+
 - Uncaught TypeError: this.props.updateCommentText is not a function. Well how to pass a function as props from parent comp to child comp. It is possible?
 ? https://stackoverflow.com/questions/32317154/react-uncaught-typeerror-cannot-read-property-setstate-of-undefined <button onClick={this.delta.bind(this)}>+</button>
 
