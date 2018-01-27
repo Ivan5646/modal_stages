@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-
 class Content extends React.Component {
     render() {
         return (
@@ -94,11 +93,31 @@ class ModalWindow extends React.Component {
     }
 }
 
-const Questions = [
+var questionsArray = [
     {sequence: "1", question: "What is you name?"},
     {sequence: "2", question: "How did you know about us?"},
     {sequence: "3", question: "What is your phone number?"}
 ];
+
+//conver array to object
+var Questions = {};
+
+var arrayToObject = function(array, object){
+  array.forEach(function(value, index){
+    object[index] = value;
+  })
+  // console.log(object);
+  return object;
+}
+
+Questions = arrayToObject(questionsArray, Questions); 
+//  looks like this
+// {
+//     0: {sequence: "1", question: "What is you name?"}
+//     1: {sequence: "2", question: "How did you know about us?"}
+//     2: {sequence: "3", question: "What is your phone number?"}
+// }
+
 
 ReactDOM.render(
     <ModalWindow questions={Questions}/>,
