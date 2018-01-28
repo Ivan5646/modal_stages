@@ -54,7 +54,7 @@ class Buttons extends React.Component {
 class ModalWindow extends React.Component {
     constructor(props) {
         super(props); //?
-        this.state = {stage: 1, question: this.props.questions.question}  
+        this.state = {stage: 1, question: props.questions.sequence1.question}  
         this.next = this.next.bind(this); 
         this.previous = this.previous.bind(this); 
     }
@@ -77,7 +77,7 @@ class ModalWindow extends React.Component {
         return (
             <div>
                 <Stages stage={Stage}/>
-                <Content content={this.props.questions.question}/>
+                <Content content={this.props.questions.sequence1.question}/>
                 <Buttons nextBtn={this.next.bind(this)} previousBtn={this.previous.bind(this)} />
             </div>
         );
