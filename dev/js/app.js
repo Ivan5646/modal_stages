@@ -54,7 +54,7 @@ class Buttons extends React.Component {
 class ModalWindow extends React.Component {
     constructor(props) {
         super(props); //?
-        this.state = {stage: 1, question: props.questions.sequence1.question}  
+        this.state = {stage: 0}  //have to go through Quetion object
         this.next = this.next.bind(this); 
         this.previous = this.previous.bind(this); 
     }
@@ -71,8 +71,8 @@ class ModalWindow extends React.Component {
     }
 
     render() {
-        const Stage = this.state.stage;
-        const Question = this.state.question;
+        const Stage = Questions[this.state.stage].sequence; //this.state.stage; 
+        const Question = Questions[this.state.stage].question;
 
         return (
             <div>
@@ -84,17 +84,17 @@ class ModalWindow extends React.Component {
     }
 }
 
-// var questionsArray = [ // need to convert to object
-//     {sequence: "1", question: "What is you name?"},
-//     {sequence: "2", question: "How did you know about us?"},
-//     {sequence: "3", question: "What is your phone number?"}
-// ];
+var Questions = [ // need to convert to object
+    {sequence: "1", question: "What is you name?"},
+    {sequence: "2", question: "How did you know about us?"},
+    {sequence: "3", question: "What is your phone number?"}
+];
 
-var Questions = {
-    sequence1: {question: "What is you name?"},
-    sequence2: {question: "How did you know about us?"},
-    sequence3: {question: "What is your phone number?"},
-}
+// var Questions = {
+//     sequence1: {question: "What is you name?"},
+//     sequence2: {question: "How did you know about us?"},
+//     sequence3: {question: "What is your phone number?"},
+// }
 
 ReactDOM.render(
     <ModalWindow questions={Questions}/>,
