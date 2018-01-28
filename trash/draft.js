@@ -18,3 +18,11 @@ Questions.map(
 	}
 )
 
+
+//conver array to object 2, using keys as first level obj
+var Questions = {}; //create the empty output object
+questionsArray.forEach( function(item, index){ 
+  var key = Object.keys(item)[0]; //take the first key from every object in the array
+  Questions[ key ] = item [ key ];  //assign the key and value to output obj
+  //console.log(Questions);
+});

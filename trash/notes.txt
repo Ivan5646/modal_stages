@@ -61,6 +61,9 @@ https://stackoverflow.com/questions/30668326/what-is-the-difference-between-usin
 App Structure.
 Comment comp is a child comp. Board is a parent comp.
 
+Scope
+- write a fucntion converting array to object
+
 Problem
 - Have to pass data array to top comp (ModalWindow) state to use it the same way as the stage.
 https://stackoverflow.com/questions/34117735/convert-array-of-objects-to-object-of-objects

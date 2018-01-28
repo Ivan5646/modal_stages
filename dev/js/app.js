@@ -54,24 +54,15 @@ class Buttons extends React.Component {
 class ModalWindow extends React.Component {
     constructor(props) {
         super(props); //?
-        this.state = {stage: 1, question: props.questions[0].question}  // need to pass const Questions here...? have to pass the whole array and change state to display required question. Now const Quesitons belongs to props.questions
-        // this.state = {mystate: props.questions} // worked
-
-        this.state = {stage: props.questions.sequence}
-
+        this.state = {stage: 1, question: this.props.questions.question}  
         this.next = this.next.bind(this); 
         this.previous = this.previous.bind(this); 
     }
      
     next() {
-        // this.setState({ stage: this.state.stage + 1});  // increment state.stage
-        // console.log("next: " + this.state.stage);
-        // console.log("state question: " + this.state.question);
-
-        // console.log(this.state);
-
-        const myQuestion = this.props.questions[0];
-        console.log(myQuestion);
+        this.setState({ stage: this.state.stage + 1});  // increment state.stage
+        console.log("next: " + this.state.stage);
+        console.log(this.state);
     }
 
     previous() {
@@ -86,38 +77,24 @@ class ModalWindow extends React.Component {
         return (
             <div>
                 <Stages stage={Stage}/>
-                <Content content={this.props.questions[0].question}/>
+                <Content content={this.props.questions.question}/>
                 <Buttons nextBtn={this.next.bind(this)} previousBtn={this.previous.bind(this)} />
             </div>
         );
     }
 }
 
-var questionsArray = [
-    {sequence: "1", question: "What is you name?"},
-    {sequence: "2", question: "How did you know about us?"},
-    {sequence: "3", question: "What is your phone number?"}
-];
+// var questionsArray = [ // need to convert to object
+//     {sequence: "1", question: "What is you name?"},
+//     {sequence: "2", question: "How did you know about us?"},
+//     {sequence: "3", question: "What is your phone number?"}
+// ];
 
-//conver array to object
-var Questions = {};
-
-var arrayToObject = function(array, object){
-  array.forEach(function(value, index){
-    object[index] = value;
-  })
-  // console.log(object);
-  return object;
+var Questions = {
+    sequence1: {question: "What is you name?"},
+    sequence2: {question: "How did you know about us?"},
+    sequence3: {question: "What is your phone number?"},
 }
-
-Questions = arrayToObject(questionsArray, Questions); 
-//  looks like this
-// {
-//     0: {sequence: "1", question: "What is you name?"}
-//     1: {sequence: "2", question: "How did you know about us?"}
-//     2: {sequence: "3", question: "What is your phone number?"}
-// }
-
 
 ReactDOM.render(
     <ModalWindow questions={Questions}/>,
