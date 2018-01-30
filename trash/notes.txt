@@ -62,7 +62,11 @@ App Structure.
 Comment comp is a child comp. Board is a parent comp.
 
 Scope
+- limit stages to 1 and max number, so it won't go 0 and minus..
+- show all stages, highlight active stage
+- clickable stages
 - write a fucntion converting array to object
+- finish off with css
 
 Problem
 - Have to pass data array to top comp (ModalWindow) state to use it the same way as the stage.
