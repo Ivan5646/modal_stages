@@ -104,6 +104,7 @@ https://www.youtube.com/watch?v=szmS_M-BMls 12 - Passing Function as Props  4:42
 
 webpack scss to sass
 https://medium.com/a-beginners-guide-for-webpack-2/using-sass-9f52e447c5ae
+So webpack imports scss to app.js import '../scss/main.scss'; and no output file?
 
 
 
@@ -129,3 +130,6 @@ save() {
 //
 bind 
 means binds class "this" to handler in a simple situation like my modal steps
+
+webpack scss to sass
+https://medium.com/a-beginners-guide-for-webpack-2/using-sass-9f52e447c5ae

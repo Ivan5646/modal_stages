@@ -1,3 +1,5 @@
+@import 'colors';
+
 $primary: #006699;
 
 h3 {
@@ -6,4 +8,5 @@ h3 {
 
 .modalWindow {
 	border: 2px solid green;
+	background-color: $dark;
 }
