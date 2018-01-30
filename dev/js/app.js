@@ -60,9 +60,12 @@ class ModalWindow extends React.Component {
     }
      
     next() {
-        this.setState({ stage: this.state.stage + 1});  // increment state.stage
-        console.log("next: " + this.state.stage);
-        console.log(this.state);
+        if (this.state.stage <= 2) {
+            this.setState({ stage: this.state.stage += 1});  // increment state.stage
+            console.log("next: " + this.state.stage);
+        }else{
+            console.log("over the limit");
+        }
     }
 
     previous() {

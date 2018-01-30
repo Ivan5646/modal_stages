@@ -80,8 +80,10 @@ Solved by
 this.eachComment = this.eachComment.bind(this);  in constructor 
 {this.updateComment.bind(this)} in <Comment/> instead of {Board.updateComment.bind(this)}
 
-
 - webpack scss to css. I will leave it for later. For now just use css.
+
+Problems solved
+- When onclick next fires state.stage is not incremented at once... What does it mean, state.stage assigned first when next fires? then increments. Solved by this.setState({ stage: this.state.stage += 1});
 
 
 
