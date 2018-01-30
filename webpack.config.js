@@ -20,7 +20,13 @@ module.exports = {
                 test: /\.scss/,
                 loader: 'style-loader!css-loader!sass-loader'
             }
-        ]
+        ],
+        rules:[
+            {
+               test:/\.(s*)css$/,
+               use:['style-loader','css-loader', 'sass-loader']
+           }
+       ]
     },
     output: {
         path: 'src',

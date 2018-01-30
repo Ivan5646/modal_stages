@@ -72,6 +72,8 @@ Scope done
 
 
 Problem
+- nothing in main.css compiled file?
+
 - Have to pass data array to top comp (ModalWindow) state to use it the same way as the stage.
 https://stackoverflow.com/questions/34117735/convert-array-of-objects-to-object-of-objects
 
@@ -86,6 +88,13 @@ this.eachComment = this.eachComment.bind(this);  in constructor
 - webpack scss to css. I will leave it for later. For now just use css.
 
 Problems solved
+- webpack scss to sass
+https://medium.com/a-beginners-guide-for-webpack-2/using-sass-9f52e447c5ae
+node-sass won't install
+ Error: Can't find Python executable "python", you can set the PYTHON env variable.
+ https://github.com/felixrieseberg/windows-build-tools/issues/56
+ successfully installed python waiting for installers   https://github.com/felixrieseberg/windows-build-tools/issues/16
+
 - When onclick next fires state.stage is not incremented at once... What does it mean, state.stage assigned first when next fires? then increments. Solved by this.setState({ stage: this.state.stage += 1});
 
 
@@ -93,8 +102,8 @@ Problems solved
 https://www.youtube.com/watch?v=szmS_M-BMls 12 - Passing Function as Props  4:42
 
 
-
-
+webpack scss to sass
+https://medium.com/a-beginners-guide-for-webpack-2/using-sass-9f52e447c5ae
 
 
 
