@@ -12,17 +12,14 @@ class Content extends React.Component {
 }
 
 class Stages extends React.Component {
-  render() {
-    return (
-      <div className="stage">{this.props.stage}</div>
-    );
-  }
-}
-
-function nextStage(currentStage) {
-    currentStage += 1;
-    console.log("nextStage function");
-    return currentStage;
+    render() {
+        return (
+            <div>
+                <div>{this.props.stages}</div>
+                <div>{this.props.stage}</div>
+            </div>
+        );
+    }
 }
 
 class Buttons extends React.Component {
@@ -82,10 +79,11 @@ class ModalWindow extends React.Component {
     render() {
         const Stage = Questions[this.state.stage].sequence; //this.state.stage; 
         const Question = Questions[this.state.stage].question;
+        var stages = ["1", "2", "3"];
 
         return (
             <div className="modalWindow">
-                <Stages stage={Stage}/>
+                <Stages stage={Stage} stages={stages}/>
                 <Content content={Question}/>
                 <Buttons nextBtn={this.next.bind(this)} previousBtn={this.previous.bind(this)} />
             </div>

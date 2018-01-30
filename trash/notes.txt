@@ -62,7 +62,8 @@ App Structure.
 Comment comp is a child comp. Board is a parent comp.
 
 Scope
-- show all stages, highlight active stage
+- show all stages, highlight active stage. For now just make static, afterwards generate dynamically
+save some array inside Stages and display it... how?
 - clickable stages
 - write a fucntion converting array to object
 - finish off with css

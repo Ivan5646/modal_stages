@@ -26,3 +26,6 @@ questionsArray.forEach( function(item, index){
   Questions[ key ] = item [ key ];  //assign the key and value to output obj
   //console.log(Questions);
 });
+
+
+<div className="stage">{this.props.stage}</div>
