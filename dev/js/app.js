@@ -82,7 +82,7 @@ class ModalWindow extends React.Component {
         const Question = Questions[this.state.stage].question;
 
         return (
-            <div>
+            <div className="modalWindow">
                 <Stages stage={Stage}/>
                 <Content content={Question}/>
                 <Buttons nextBtn={this.next.bind(this)} previousBtn={this.previous.bind(this)} />

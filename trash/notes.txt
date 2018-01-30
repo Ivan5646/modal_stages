@@ -62,11 +62,14 @@ App Structure.
 Comment comp is a child comp. Board is a parent comp.
 
 Scope
-- limit stages to 1 and max number, so it won't go 0 and minus..
 - show all stages, highlight active stage
 - clickable stages
 - write a fucntion converting array to object
 - finish off with css
+
+Scope done
+- limit stages to 1 and max number, so it won't go 0 and minus..
+
 
 Problem
 - Have to pass data array to top comp (ModalWindow) state to use it the same way as the stage.
@@ -84,7 +87,6 @@ this.eachComment = this.eachComment.bind(this);  in constructor
 
 Problems solved
 - When onclick next fires state.stage is not incremented at once... What does it mean, state.stage assigned first when next fires? then increments. Solved by this.setState({ stage: this.state.stage += 1});
-
 
 
  Stopped at
