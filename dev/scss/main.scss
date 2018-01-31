@@ -26,7 +26,10 @@ h3 {
         justify-content: space-around;
     }
     .stages_num {
-
+        cursor: pointer;
+        background-color: #ffe6e6;
+        text-align: center;
+        width: 30px;
     }
     .stages_stage {
         text-align: center;
