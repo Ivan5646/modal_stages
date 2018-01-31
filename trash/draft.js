@@ -28,4 +28,10 @@ questionsArray.forEach( function(item, index){
 });
 
 
-<div className="stage">{this.props.stage}</div>
+class Stages extends React.Component {
+    render() {
+        return (
+            <div>{this.props.stages}</div>
+        );
+    }
+}

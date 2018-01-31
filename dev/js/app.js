@@ -14,8 +14,12 @@ class Content extends React.Component {
 class Stages extends React.Component {
     render() {
         return (
-            <div>
-                <div>{this.props.stages}</div>
+            <div className="stages">
+                <div className="stages_nav">
+                    <div className="stages_num">{this.props.stages[0]}</div>
+                    <div className="stages_num">{this.props.stages[1]}</div>
+                    <div className="stages_num">{this.props.stages[2]}</div>
+                </div>
                 <div>{this.props.stage}</div>
             </div>
         );

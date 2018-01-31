@@ -7,6 +7,22 @@ h3 {
 }
 
 .modalWindow {
+	display: flex;
+	flex-direction: column;
+	// justify-content: center;
+	align-items: center;
 	border: 2px solid green;
 	// background-color: $dark; // check file import
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+
+.stages {
+	.stages_nav {
+		display: flex;
+	}
+	.stages_num {
+
+	}
 }
