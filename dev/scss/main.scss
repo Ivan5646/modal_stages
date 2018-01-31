@@ -3,26 +3,32 @@
 $primary: #006699;
 
 h3 {
-	color: $primary;
+    color: $primary;
 }
 
 .modalWindow {
-	display: flex;
-	flex-direction: column;
-	// justify-content: center;
-	align-items: center;
-	border: 2px solid green;
-	// background-color: $dark; // check file import
-	max-width: 600px;
-	margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    border: 2px solid green;
+    // background-color: $dark; // check file import
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 
 .stages {
-	.stages_nav {
-		display: flex;
-	}
-	.stages_num {
+    width: 200px;
 
-	}
+    .stages_nav {
+        display: flex;
+        justify-content: space-around;
+    }
+    .stages_num {
+
+    }
+    .stages_stage {
+        text-align: center;
+    }
 }

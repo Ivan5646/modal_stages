@@ -20,7 +20,7 @@ class Stages extends React.Component {
                     <div className="stages_num">{this.props.stages[1]}</div>
                     <div className="stages_num">{this.props.stages[2]}</div>
                 </div>
-                <div>{this.props.stage}</div>
+                <div className="stages_stage">{this.props.stage}</div>
             </div>
         );
     }
