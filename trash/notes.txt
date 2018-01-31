@@ -74,7 +74,7 @@ Scope done
 
 
 App Logics
-в ModalWindow в render method передается <Stages stage={Stage} stages={stages}/> c state и <Buttons/> в котором передаются хэндлеры (которые находятся в ModalWindow и в которых меняется state)
+в ModalWindow в render method передается <Stages stage={Stage} stages={stages}/> c state и <Buttons/> в котором передаются хэндлеры (которые находятся в ModalWindow и в которых меняется state, а state передается в <Stages stage={Stage})
 
 
 Problem

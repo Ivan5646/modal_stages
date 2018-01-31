@@ -14,19 +14,21 @@ class Content extends React.Component {
 class Stages extends React.Component {
     constructor(props) {
         super(props);
+        this.handleStageNum = this.handleStageNum.bind(this);
     }
 
-    handlerStageNum() {
+    handleStageNum() {
         //when click on stage num highlight it by (adding css class) changing ModalWindow state
+        this.props.handleStage();
     }
 
     render() {
         return (
             <div className="stages">
                 <div className="stages_nav">
-                    <div className="stages_num">{this.props.stages[0]}</div>
-                    <div className="stages_num">{this.props.stages[1]}</div>
-                    <div className="stages_num">{this.props.stages[2]}</div>
+                    <div className="stages_num" onClick={this.handleStageNum}>{this.props.stages[0]}</div>
+                    <div className="stages_num" onClick={this.handleStageNum}>{this.props.stages[1]}</div>
+                    <div className="stages_num" onClick={this.handleStageNum}>{this.props.stages[2]}</div>
                 </div>
                 <div className="stages_stage">{this.props.stage}</div>
             </div>
@@ -67,6 +69,7 @@ class ModalWindow extends React.Component {
         this.state = {stage: 0}  //have to go through Quetion object
         this.next = this.next.bind(this); 
         this.previous = this.previous.bind(this); 
+        this.highlightStage = this.highlightStage.bind(this); 
     }
      
     next() {
@@ -87,6 +90,10 @@ class ModalWindow extends React.Component {
         }
     }
 
+    highlightStage() {
+        console.log("hi from highlightStage method of ModalWindow");
+    }
+
     render() {
         const Stage = Questions[this.state.stage].sequence; //this.state.stage; 
         const Question = Questions[this.state.stage].question;
@@ -94,7 +101,7 @@ class ModalWindow extends React.Component {
 
         return (
             <div className="modalWindow">
-                <Stages stage={Stage} stages={stages}/>
+                <Stages stage={Stage} stages={stages} handleStage={this.highlightStage.bind(this)}/>
                 <Content content={Question}/>
                 <Buttons nextBtn={this.next.bind(this)} previousBtn={this.previous.bind(this)} />
             </div>
