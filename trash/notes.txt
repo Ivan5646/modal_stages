@@ -63,13 +63,18 @@ Comment comp is a child comp. Board is a parent comp.
 
 Scope
 - show all stages, highlight active stage. For now just make static, afterwards generate dynamically
-
+- finish off with css
+ just make basic layout for now, when logics will be finished make a fancy css, maybe just take a template from somewhere (can take those modal_stages)
 - clickable stages
 - write a fucntion converting array to object
-- finish off with css
+
 
 Scope done
 - limit stages to 1 and max number, so it won't go 0 and minus..
+
+
+App Logics
+в ModalWindow в render method передается <Stages stage={Stage} stages={stages}/> c state и <Buttons/> в котором передаются хэндлеры (которые находятся в ModalWindow и в которых меняется state)
 
 
 Problem

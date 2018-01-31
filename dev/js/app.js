@@ -12,6 +12,14 @@ class Content extends React.Component {
 }
 
 class Stages extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    handlerStageNum() {
+        //when click on stage num highlight it by (adding css class) changing ModalWindow state
+    }
+
     render() {
         return (
             <div className="stages">
@@ -29,7 +37,6 @@ class Stages extends React.Component {
 class Buttons extends React.Component {
     constructor(props) {
         super(props); 
-        this.state = {stage: 1}
         this.nextHandler = this.nextHandler.bind(this); 
         this.previousHandler = this.previousHandler.bind(this); 
     }
