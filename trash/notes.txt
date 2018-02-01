@@ -64,6 +64,8 @@ Comment comp is a child comp. Board is a parent comp.
 Scope
 - show all stages, highlight active stage. For now just make static, afterwards generate dynamically
 https://medium.com/@shopsifter/if-you-think-you-need-jquery-in-your-react-app-you-re-doing-it-wrong-77899ed7217e
+pass state to a child
+https://stackoverflow.com/questions/24147331/react-the-right-way-to-pass-form-element-state-to-sibling-parent-elements
 - finish off with css
  just make basic layout for now, when logics will be finished make a fancy css, maybe just take a template from somewhere (can take those modal_stages)
 - clickable stages
