@@ -21,17 +21,21 @@ h3 {
 .stages {
     width: 200px;
 
-    .stages_nav {
+    &_nav {
         display: flex;
         justify-content: space-around;
     }
-    .stages_num {
+    &_num {
         cursor: pointer;
         background-color: #ffe6e6;
         text-align: center;
         width: 30px;
+        &--active {
+            background-color: blue;
+        }
     }
-    .stages_stage {
+    &_stage {
         text-align: center;
     }
+
 }

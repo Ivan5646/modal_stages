@@ -19,6 +19,7 @@ class Stages extends React.Component {
 
     handleStageNum() {
         //when click on stage num highlight it by (adding css class) changing ModalWindow state
+        // should I use jquery to toggle class?
         this.props.handleStage();
     }
 
