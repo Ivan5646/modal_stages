@@ -14,13 +14,15 @@ class Content extends React.Component {
 class Stages extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { /* initial state */ };
         this.handleStageNum = this.handleStageNum.bind(this);
     }
 
-    handleStageNum() {
+    handleStageNum(e) {
         //when click on stage num highlight it by (adding css class) changing ModalWindow state
-        // should I use jquery to toggle class?
+        // well actually have to pass state of ModalWindow...? so it will directly controll highlighting of a stage
         this.props.handleStage();
+        console.log("event " +  e.target);
     }
 
     render() {

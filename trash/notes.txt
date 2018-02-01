@@ -63,6 +63,7 @@ Comment comp is a child comp. Board is a parent comp.
 
 Scope
 - show all stages, highlight active stage. For now just make static, afterwards generate dynamically
+https://medium.com/@shopsifter/if-you-think-you-need-jquery-in-your-react-app-you-re-doing-it-wrong-77899ed7217e
 - finish off with css
  just make basic layout for now, when logics will be finished make a fancy css, maybe just take a template from somewhere (can take those modal_stages)
 - clickable stages
