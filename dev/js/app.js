@@ -30,11 +30,9 @@ class Stages extends React.Component {
         }
     }
 
-    // this.refs.stage1.style.background = "green";
-
     render() {
         let active = "stages_num";
-        if (this.props.stage == 0 ) {
+        if (this.props.stage == 1 ) {
             console.log(this.props.stage);
             active = "stageActive";
         }
