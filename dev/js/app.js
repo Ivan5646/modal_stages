@@ -15,17 +15,7 @@ class Stages extends React.Component {
     constructor(props) {
         super(props);
         this.state = { /* initial state */ };
-        this.aciveStage = this.aciveStage.bind(this);
         this.handleCLick = this.handleCLick.bind(this);
-    }
-
-    aciveStage(e) {
-        let active = "stageActive";
-        alert(e.currentTarget.textContent);
-
-        if (e.currentTarget.textContent == this.props.stage) {
-            e.currentTarget.className = "stageActive";
-        }
     }
 
     handleCLick() {
@@ -39,14 +29,19 @@ class Stages extends React.Component {
         //     // active = "stageActive";
         // }
 
+        let active = "stageActive";
+        if (this.props.stage == 1) {
+            // assign active to stage1. khui prossysh' kak eto sdelat, takzhe takoy sposob ne yavlyatse react-vernym
+        }
+
         return (
             <div className="stages">
                 <div className="stages_nav">
-                    <div className="stages_num" onClick={this.aciveStage} ref="stage1">{this.props.stages[0]}</div>
+                    <div className="stages_num" onClick={this.handleCLick} ref="stage1">{this.props.stages[0]}</div>
                     <div className="stages_num" onClick={this.handleCLick} ref="stage2">{this.props.stages[1]}</div>
                     <div className="stages_num" onClick={this.handleCLick} ref="stage3">{this.props.stages[2]}</div>
                 </div>
-                <div className="stages_stage">{this.props.stage}</div>
+                <div className="stages_stage">{this.props.stage}</div> {/* get updated as a state in ModalWindow */}
             </div>
         );
     }
