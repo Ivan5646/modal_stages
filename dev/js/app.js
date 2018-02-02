@@ -24,19 +24,27 @@ class Stages extends React.Component {
         this.props.handleStage();
         console.log("event " +  e.target);
 
-        //
         if (this.props.stage == 0) {
             // highlight stage 1 and so on
+            this.refs.stage1.style.background = "green";
         }
     }
 
+    // this.refs.stage1.style.background = "green";
+
     render() {
+        let active = "stages_num";
+        if (this.props.stage == 0 ) {
+            console.log(this.props.stage);
+            active = "stageActive";
+        }
+
         return (
             <div className="stages">
                 <div className="stages_nav">
-                    <div className="stages_num" onClick={this.handleStageNum}>{this.props.stages[0]}</div>
-                    <div className="stages_num" onClick={this.handleStageNum}>{this.props.stages[1]}</div>
-                    <div className="stages_num" onClick={this.handleStageNum}>{this.props.stages[2]}</div>
+                    <div className={active} onClick={this.handleStageNum} ref="stage1">{this.props.stages[0]}</div>
+                    <div className="stages_num" onClick={this.handleStageNum} ref="stage2">{this.props.stages[1]}</div>
+                    <div className="stages_num" onClick={this.handleStageNum} ref="stage3">{this.props.stages[2]}</div>
                 </div>
                 <div className="stages_stage">{this.props.stage}</div>
             </div>
