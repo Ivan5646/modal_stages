@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Modal Steps</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+  <h4>The example of passing state form parent to a child</h4>
+
+  <div id="root"></div>
+
+</body>
+
+<script type="text/babel">
+
+class Example extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { data: 'test' }
+  }
+  render () {
+    return (
+      <div>
+        <C1 onUpdate={this.onUpdate.bind(this)}/>
+        <C2 data={this.state.data}/>
+      </div>
+    )
+  }
+  onUpdate (data) { this.setState({ data }) }
+}
+
+class C1 extends React.Component {
+    render () {
+      return (
+        <div>
+          <input type='text' ref='myInput'/>
+          <input type='button' onClick={this.update.bind(this)} value='Update C2'/>
+        </div>
+      )
+    }
+    update () {
+      this.props.onUpdate(this.refs.myInput.getDOMNode().value)
+    }
+}
+
+class C2 extends React.Component {
+    render () {
+      return <div>{this.props.data}</div>
+    }
+}
+
+</script>
+
+
+</html>

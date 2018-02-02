@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Modal Steps</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+  <h4>The example of passing state form parent to a child</h4>
+  <p>https://codepen.io/anon/pen/wJrRpZ?editors=0011</p>
+  <div id="root"></div>
+
+</body>
+
+<script type="text/babel">
+
+class Example extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { data: 'test' }
+  }
+  
+  onUpdate (data) { this.setState({ data }) }
+  
+  render () {
+    return (
+      <div>
+        <C1 onUpdate={this.onUpdate.bind(this)}/>
+        <C2 data={this.state.data}/> {/* here state is passed to child comp...*/}
+      </div>
+    )
+  }
+}
+
+class C1 extends React.Component {
+    update () {
+      this.props.onUpdate(this.refs.myInput.getDOMNode().value); // takes the value of the input. So onUpdate function gets the value here and sets Example's state from here? 
+    }
+
+    render () {
+      return (
+        <div>
+          <input type='text' ref='myInput'/>
+          <input type='button' onClick={this.update.bind(this)} value='Update C2'/>
+        </div>
+      )
+    }
+}
+
+class C2 extends React.Component {
+    render () {
+      return <div>{this.props.data}</div>
+    }
+}
+
+React.render(<Example />, document.getElementById('root'));
+
+</script>
+
+
+</html>

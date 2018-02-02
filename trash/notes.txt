@@ -62,7 +62,7 @@ App Structure.
 Comment comp is a child comp. Board is a parent comp.
 
 Scope
-- show all stages, highlight active stage. For now just make static, afterwards generate dynamically
+- show all stages, highlight active stage. And change question by clicking on the stage. 
 https://medium.com/@shopsifter/if-you-think-you-need-jquery-in-your-react-app-you-re-doing-it-wrong-77899ed7217e
 pass state to a child
 https://stackoverflow.com/questions/24147331/react-the-right-way-to-pass-form-element-state-to-sibling-parent-elements

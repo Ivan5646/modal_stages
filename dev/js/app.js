@@ -23,6 +23,11 @@ class Stages extends React.Component {
         // well actually have to pass state of ModalWindow...? so it will directly controll highlighting of a stage
         this.props.handleStage();
         console.log("event " +  e.target);
+
+        //
+        if (this.props.stage == 0) {
+            // highlight stage 1 and so on
+        }
     }
 
     render() {
