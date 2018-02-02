@@ -146,3 +146,7 @@ https://medium.com/a-beginners-guide-for-webpack-2/using-sass-9f52e447c5ae
 
 Accessing DOM
 http://jamesknelson.com/react-js-by-example-interacting-with-the-dom/
+
+get the text of the lement
+https://stackoverflow.com/questions/36414432/react-get-text-of-div-on-click-without-refs
+alert(e.currentTarget.textContent);

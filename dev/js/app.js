@@ -15,34 +15,36 @@ class Stages extends React.Component {
     constructor(props) {
         super(props);
         this.state = { /* initial state */ };
-        this.handleStageNum = this.handleStageNum.bind(this);
+        this.aciveStage = this.aciveStage.bind(this);
+        this.handleCLick = this.handleCLick.bind(this);
     }
 
-    handleStageNum(e) {
-        //when click on stage num highlight it by (adding css class) changing ModalWindow state
-        // well actually have to pass state of ModalWindow...? so it will directly controll highlighting of a stage
-        this.props.handleStage();
-        console.log("event " +  e.target);
+    aciveStage(e) {
+        let active = "stageActive";
+        alert(e.currentTarget.textContent);
 
-        if (this.props.stage == 0) {
-            // highlight stage 1 and so on
-            this.refs.stage1.style.background = "green";
+        if (e.currentTarget.textContent == this.props.stage) {
+            e.currentTarget.className = "stageActive";
         }
+    }
+
+    handleCLick() {
+
     }
 
     render() {
-        let active = "stages_num";
-        if (this.props.stage == 1 ) {
-            console.log(this.props.stage);
-            active = "stageActive";
-        }
+        // let active = "stages_num";
+        // if (this.props.stage == 1 ) {
+        //     console.log(this.props.stage);
+        //     // active = "stageActive";
+        // }
 
         return (
             <div className="stages">
                 <div className="stages_nav">
-                    <div className={active} onClick={this.handleStageNum} ref="stage1">{this.props.stages[0]}</div>
-                    <div className="stages_num" onClick={this.handleStageNum} ref="stage2">{this.props.stages[1]}</div>
-                    <div className="stages_num" onClick={this.handleStageNum} ref="stage3">{this.props.stages[2]}</div>
+                    <div className="stages_num" onClick={this.aciveStage} ref="stage1">{this.props.stages[0]}</div>
+                    <div className="stages_num" onClick={this.handleCLick} ref="stage2">{this.props.stages[1]}</div>
+                    <div className="stages_num" onClick={this.handleCLick} ref="stage3">{this.props.stages[2]}</div>
                 </div>
                 <div className="stages_stage">{this.props.stage}</div>
             </div>
