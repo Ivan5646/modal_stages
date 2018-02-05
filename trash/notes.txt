@@ -69,6 +69,7 @@ https://stackoverflow.com/questions/24147331/react-the-right-way-to-pass-form-el
 options for hiighlighting active stage:
 1) pass the parent state (ModalWindow) to child (Stages). Yes, it actually being passed as props to Stages but how to highlight active stage? So how to listen to changes of the props? Or Do I have to create highlight logics in ModalWindow (should be a wrong a way)? Another option - set state inside Stages (but in this case the state of ModalWindow will not directly controll the stage highlight).
 And after all
+just do everything in ModalWindow, fuck it, just apply css there. Nah, the html eleemnt are located in Stages... 
 
 
 - finish off with css
