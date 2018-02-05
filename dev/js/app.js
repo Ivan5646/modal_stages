@@ -19,7 +19,14 @@ class Stages extends React.Component {
     }
 
     handleCLick() {
+        this.props.handleStage();
+    }
 
+    // dispatching an action based on state change
+    componentWillUpdate(nextProps, nextState) {
+        if (nextProps) {
+            
+        }
     }
 
     render() {
@@ -32,6 +39,11 @@ class Stages extends React.Component {
         let active = "stageActive";
         if (this.props.stage == 1) {
             // assign active to stage1. khui prossysh' kak eto sdelat, takzhe takoy sposob ne yavlyatse react-vernym
+            console.log(this.props.stage);
+        }else if (this.props.stage == 2) {
+            console.log(this.props.stage);
+        }else{
+            console.log(this.props.stage);
         }
 
         return (
@@ -41,7 +53,7 @@ class Stages extends React.Component {
                     <div className="stages_num" onClick={this.handleCLick} ref="stage2">{this.props.stages[1]}</div>
                     <div className="stages_num" onClick={this.handleCLick} ref="stage3">{this.props.stages[2]}</div>
                 </div>
-                <div className="stages_stage">{this.props.stage}</div> {/* get updated as a state in ModalWindow */}
+                <div className="stages_stage">{this.props.stage}</div> {/* gets updated as a state in ModalWindow */}
             </div>
         );
     }
@@ -60,7 +72,7 @@ class Buttons extends React.Component {
     }
 
     previousHandler() {
-        // console.log("previousHandler");
+        // console.log("previousHandler"); 
         this.props.previousBtn();
     }
 
