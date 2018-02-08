@@ -35,3 +35,40 @@ class Stages extends React.Component {
         );
     }
 }
+
+
+// active highlight  https://stackoverflow.com/questions/42101150/change-color-of-selected-element-react
+var List = React.createClass({
+  getInitialState: function(){
+    return { active: null}
+  },
+
+  toggle: function(position){
+    if (this.state.active === position) {
+      this.setState({active : null})
+    } else {
+      this.setState({active : position})
+    }
+  },
+  
+  myColor: function(position) {
+    if (this.state.active === position) {
+      return "blue";
+    }
+    return "";
+  },
+
+  render: function () {
+    return (
+      <div>
+        <li style={{background: this.myColor(0)}} onClick={() => {this.toggle(0)}}>one</li>
+        <li style={{background: this.myColor(1)}} onClick={() => {this.toggle(1)}}>two</li>
+        <li style={{background: this.myColor(2)}} onClick={() => {this.toggle(2)}}>three</li>
+      </div>
+    );
+  }
+});
+ReactDOM.render(
+    <List/>,
+    document.getElementById('app')
+);

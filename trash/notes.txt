@@ -55,8 +55,13 @@ React options
 - redux newBoston
 - webpack, css
 - finish off modal steps
+- Chrome extension? What should I do about it? Understand how it is done..
 - Miniprojects
  aviasales test - just filtering use?
+ - Another thing strong command of js, wtie something on js, a game for example?
+ - maybe taking a mentor at mkdev, Ivan is free now. I think before study redux in NewBoston yotube course
+
+ So eventually, 1) redux newboston, because I stuck at modal_Stages and it will get familiar if I take anf y other courses and it also was required at Allmax. 2) ? take mkdev course
 
 
 ------Bucky Tutorials Branch-----
@@ -81,6 +86,8 @@ And after all
 just do everything in ModalWindow, fuck it, just apply css there. Nah, the html eleemnt are located in Stages... 
 Plus you have to change the question (it means state) by clicking on a stage 
 So how it works: I wrote a function that chages sata in ModalWindow, passed it to Buttons. Do the same for highlighting active element? The problem is getting the html element inside the function, jquery way won't do
+
+https://stackoverflow.com/questions/42101150/change-color-of-selected-element-react
 
 
 - finish off with css
