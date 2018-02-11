@@ -14,44 +14,33 @@ class Content extends React.Component {
 class Stages extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { /* initial state */ };
-        this.handleCLick = this.handleCLick.bind(this);
+        this.state = { active: null };
+        this.toggle =  this.toggle.bind(this);
+        this.myColor =  this.myColor.bind(this);
     }
 
-    handleCLick() {
-        this.props.handleStage();
+  toggle(position) {
+    if (this.state.active === position) {
+      this.setState({active : null})
+    } else {
+      this.setState({active : position})
     }
-
-    // dispatching an action based on state change
-    componentWillUpdate(nextProps, nextState) {
-        if (nextProps) {
-            
-        }
+  }
+  
+  myColor(position) {
+    if (this.state.active === position) {
+      return "blue";
     }
+    return "";
+  }
 
     render() {
-        // let active = "stages_num";
-        // if (this.props.stage == 1 ) {
-        //     console.log(this.props.stage);
-        //     // active = "stageActive";
-        // }
-
-        let active = "stageActive";
-        if (this.props.stage == 1) {
-            // assign active to stage1. khui prossysh' kak eto sdelat, takzhe takoy sposob ne yavlyatse react-vernym
-            console.log(this.props.stage);
-        }else if (this.props.stage == 2) {
-            console.log(this.props.stage);
-        }else{
-            console.log(this.props.stage);
-        }
-
         return (
             <div className="stages">
                 <div className="stages_nav">
-                    <div className="stages_num" onClick={this.handleCLick} ref="stage1">{this.props.stages[0]}</div>
-                    <div className="stages_num" onClick={this.handleCLick} ref="stage2">{this.props.stages[1]}</div>
-                    <div className="stages_num" onClick={this.handleCLick} ref="stage3">{this.props.stages[2]}</div>
+                    <div style={{background: this.myColor(0)}} onClick={() => {this.toggle(0)}}>1</div>
+                    <div style={{background: this.myColor(1)}} onClick={() => {this.toggle(1)}}>2</div>
+                    <div style={{background: this.myColor(2)}} onClick={() => {this.toggle(2)}}>3</div>
                 </div>
                 <div className="stages_stage">{this.props.stage}</div> {/* gets updated as a state in ModalWindow */}
             </div>
