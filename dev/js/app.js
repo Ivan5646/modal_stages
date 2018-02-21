@@ -14,7 +14,7 @@ class Content extends React.Component {
 class Stages extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { active: null };
+        this.state = { active: null }; // have to pass state here from ModalWindow?
         this.toggle =  this.toggle.bind(this);
         this.myColor =  this.myColor.bind(this);
     }

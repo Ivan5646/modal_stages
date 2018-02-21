@@ -85,10 +85,12 @@ options for hiighlighting active stage:
 And after all
 just do everything in ModalWindow, fuck it, just apply css there. Nah, the html eleemnt are located in Stages... 
 Plus you have to change the question (it means state) by clicking on a stage 
-So how it works: I wrote a function that chages sata in ModalWindow, passed it to Buttons. Do the same for highlighting active element? The problem is getting the html element inside the function, jquery way won't do
+So how it works: I wrote a function that chages data in ModalWindow, passed it to Buttons. Do the same for highlighting active element? The problem is getting the html element inside the function, jquery way won't do
 
 https://stackoverflow.com/questions/42101150/change-color-of-selected-element-react
 Ok, i have to write functionaity in next, previous of ModalWindow and pass them to Buttons
+
+main thing to do now by clicking on stage num I have to change question (change ModalWindow state). I have to write functionality in next, previous(or other methods?) of ModalWindow and pass them to Stages.
 
 
 - finish off with css
