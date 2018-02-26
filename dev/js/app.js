@@ -25,15 +25,8 @@ class Stages extends React.Component {
   
   myColor(position) {
     this.props.changeColor(position);
-    // console.log("myColor position value: " + position);
+    console.log("myColor position value: " + position);
   }
-
-    // myColor(position) {
-    //     if (this.state.active === position) {
-    //       return "blue";
-    //     }
-    //     return "";
-    // }
 
     render() {
         return (
