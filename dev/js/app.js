@@ -20,11 +20,13 @@ class Stages extends React.Component {
     }
 
   toggle(position) {
-    if (this.state.active === position) {
-      this.setState({active : null})
-    } else {
-      this.setState({active : position})
-    }
+    this.props.handleStage(position);
+
+    // if (this.state.active === position) {
+    //   this.setState({active : null})
+    // } else {
+    //   this.setState({active : position})
+    // }
   }
   
   myColor(position) {
@@ -38,9 +40,9 @@ class Stages extends React.Component {
         return (
             <div className="stages">
                 <div className="stages_nav">
-                    <div style={{background: this.myColor(0)}} onClick={() => {this.toggle(0)}}>1</div>
-                    <div style={{background: this.myColor(1)}} onClick={() => {this.toggle(1)}}>2</div>
-                    <div style={{background: this.myColor(2)}} onClick={() => {this.toggle(2)}}>3</div>
+                    <div style={{background: this.myColor(0)}} onClick={() => {this.toggle(0)}}>{this.props.stages[0]}</div>
+                    <div style={{background: this.myColor(1)}} onClick={() => {this.toggle(1)}}>{this.props.stages[1]}</div>
+                    <div style={{background: this.myColor(2)}} onClick={() => {this.toggle(2)}}>{this.props.stages[2]}</div> 
                 </div>
                 <div className="stages_stage">{this.props.stage}</div> {/* gets updated as a state in ModalWindow */}
             </div>
@@ -102,8 +104,12 @@ class ModalWindow extends React.Component {
         }
     }
 
-    highlightStage() {
-        console.log("hi from highlightStage method of ModalWindow");
+    highlightStage(position) { // this is gonna be the click handler for the stage num
+        if (this.state.active === position) {
+          this.setState({stage: 0})
+        } else {
+          this.setState({stage: position})
+        }
     }
 
     render() {
