@@ -25,7 +25,7 @@ class Stages extends React.Component {
   
   myColor(position) {
     this.props.changeColor(position);
-    console.log("myColor position value: " + position);
+    // console.log("myColor position value: " + position);
   }
 
     // myColor(position) {
@@ -82,7 +82,7 @@ class ModalWindow extends React.Component {
         this.state = {stage: 0}  //have to go through Quetion object
         this.next = this.next.bind(this); 
         this.previous = this.previous.bind(this); 
-        this.highlightStage = this.highlightStage.bind(this); 
+        this.switchStage = this.switchStage.bind(this); 
         this.changeStageColor = this.changeStageColor.bind(this); 
     }
      
@@ -104,21 +104,16 @@ class ModalWindow extends React.Component {
         }
     }
 
-    highlightStage(position) { // this is gonna be the click handler for the stage num
-        if (this.state.stage === position) {
-          //this.setState({stage: 0})
-          console.log("highlightStage position, if: " + position);
-        } else {
-          this.setState({stage: position});
-          console.log("highlightStage position, else: " + position);
-        }
+    switchStage(position) { // this is gonna be the click handler for the stage num
+        this.setState({stage: position});
     }
 
     changeStageColor(position) {
         if (this.state.stage === position) {
-            console.log("changeStageColor position, if: " + position);
+            console.log("changeStageColor position value, inside of if statement: " + position);
             return "blue";
         }
+        console.log("changeStageColor returns out of if statement position value, " + position);
         return "";
     }
 
@@ -129,7 +124,7 @@ class ModalWindow extends React.Component {
 
         return (
             <div className="modalWindow">
-                <Stages stage={Stage} stages={stages} handleStage={this.highlightStage.bind(this)} changeColor={this.changeStageColor.bind(this)}/>
+                <Stages stage={Stage} stages={stages} handleStage={this.switchStage.bind(this)} changeColor={this.changeStageColor.bind(this)}/>
                 <Content content={Question}/>
                 <Buttons nextBtn={this.next.bind(this)} previousBtn={this.previous.bind(this)} />
             </div>
