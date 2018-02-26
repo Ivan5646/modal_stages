@@ -124,6 +124,8 @@ this.eachComment = this.eachComment.bind(this);  in constructor
 - webpack scss to css. I will leave it for later. For now just use css.
 
 Problems solved
+- changeStageColor did not work. Solved by adding "return" to component function 
+
 - webpack scss to sass
 https://medium.com/a-beginners-guide-for-webpack-2/using-sass-9f52e447c5ae
 node-sass won't install
