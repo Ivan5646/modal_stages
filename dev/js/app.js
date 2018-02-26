@@ -17,6 +17,7 @@ class Stages extends React.Component {
         //this.state = { active: null }; // have to pass state here from ModalWindow?
         this.toggle =  this.toggle.bind(this);
         this.myColor =  this.myColor.bind(this);
+        this.testColor =  this.testColor.bind(this);
     }
 
   toggle(position) {
@@ -28,13 +29,23 @@ class Stages extends React.Component {
     console.log("myColor position value: " + position);
   }
 
+  testColor(){
+    return this.props.changeColorTest();
+  }
+
     render() {
         return (
             <div className="stages">
                 <div className="stages_nav">
-                    <div style={{background: this.myColor(0)}} onClick={() => {this.toggle(0)}}>{this.props.stages[0]}</div>
-                    <div style={{background: this.myColor(1)}} onClick={() => {this.toggle(1)}}>{this.props.stages[1]}</div>
-                    <div style={{background: this.myColor(2)}} onClick={() => {this.toggle(2)}}>{this.props.stages[2]}</div> 
+                    <div style={{background: this.testColor()}} onClick={() => {this.toggle(0)}}>
+                        {this.props.stages[0]}
+                    </div>
+                    <div style={{background: this.myColor(1)}} onClick={() => {this.toggle(1)}}>
+                        {this.props.stages[1]}
+                    </div>
+                    <div style={{background: this.myColor(2)}} onClick={() => {this.toggle(2)}}>
+                        {this.props.stages[2]}
+                    </div> 
                 </div>
                 <div className="stages_stage">{this.props.stage}</div> {/* gets updated as a state in ModalWindow */}
             </div>
@@ -77,6 +88,8 @@ class ModalWindow extends React.Component {
         this.previous = this.previous.bind(this); 
         this.switchStage = this.switchStage.bind(this); 
         this.changeStageColor = this.changeStageColor.bind(this); 
+        this.modalWindowColor = this.modalWindowColor.bind(this); 
+
     }
      
     next() {
@@ -102,12 +115,16 @@ class ModalWindow extends React.Component {
     }
 
     changeStageColor(position) {
-        if (this.state.stage === position) {
+        if (this.state.stage == position) {
             console.log("changeStageColor position value, inside of if statement: " + position);
             return "blue";
         }
         console.log("changeStageColor returns out of if statement position value, " + position);
         return "";
+    }
+
+    modalWindowColor() {
+        return "green";
     }
 
     render() {
@@ -117,7 +134,7 @@ class ModalWindow extends React.Component {
 
         return (
             <div className="modalWindow">
-                <Stages stage={Stage} stages={stages} handleStage={this.switchStage.bind(this)} changeColor={this.changeStageColor.bind(this)}/>
+                <Stages stage={Stage} stages={stages} handleStage={this.switchStage.bind(this)} changeColor={this.changeStageColor.bind(this)} changeColorTest={this.modalWindowColor.bind(this)}/>
                 <Content content={Question}/>
                 <Buttons nextBtn={this.next.bind(this)} previousBtn={this.previous.bind(this)} />
             </div>
