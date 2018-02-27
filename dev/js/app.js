@@ -14,24 +14,17 @@ class Content extends React.Component {
 class Stages extends React.Component {
     constructor(props) {
         super(props);
-        //this.state = { active: null }; // have to pass state here from ModalWindow?
         this.toggle =  this.toggle.bind(this);
         this.myColor =  this.myColor.bind(this);
-        // this.testColor =  this.testColor.bind(this);
     }
 
-  toggle(position) {
-    this.props.handleStage(position);
-  }
-  
-  myColor(position) {
-    return this.props.changeColor(position);
-    // console.log("myColor position value: " + position);
-  }
+    toggle(position) {
+        this.props.handleStage(position);
+    }
 
-  // testColor(){
-  //   return this.props.changeColorTest();
-  // }
+    myColor(position) {
+        return this.props.changeColor(position);
+    }
 
     render() {
         return (
@@ -47,7 +40,7 @@ class Stages extends React.Component {
                         {this.props.stages[2]}
                     </div> 
                 </div>
-                <div className="stages_stage">{this.props.stage}</div> {/* gets updated as a state in ModalWindow */}
+               {/*<div className="stages_stage">{this.props.stage}</div> */}  {/* gets updated as a state in ModalWindow */}
             </div>
         );
     }
@@ -61,12 +54,10 @@ class Buttons extends React.Component {
     }
 
     nextHandler() {
-        // console.log("nextHandler");
         this.props.nextBtn();
     }
 
     previousHandler() {
-        // console.log("previousHandler"); 
         this.props.previousBtn();
     }
 
@@ -88,7 +79,6 @@ class ModalWindow extends React.Component {
         this.previous = this.previous.bind(this); 
         this.switchStage = this.switchStage.bind(this); 
         this.changeStageColor = this.changeStageColor.bind(this); 
-        // this.modalWindowColor = this.modalWindowColor.bind(this); 
     }
      
     next() {
@@ -115,16 +105,12 @@ class ModalWindow extends React.Component {
 
     changeStageColor(position) {
         if (this.state.stage == position) {
-            console.log("changeStageColor position value, inside of if statement: " + position);
+            //console.log("changeStageColor position value, inside of if statement: " + position);
             return "blue";
         }
-        console.log("changeStageColor returns out of if statement position value, " + position);
+        //console.log("changeStageColor returns out of if statement position value, " + position);
         return "";
     }
-
-    // modalWindowColor() {
-    //     return "green";
-    // }
 
     render() {
         const Stage = Questions[this.state.stage].sequence; //this.state.stage; 

@@ -1,24 +1,20 @@
-1) change state on click? to display different contnt
-2) next back buttons
-3) clickable stage numbers
+1) change state on click? to display different contnt. Done
+2) next back buttons. Done
+3) clickable stage numbers. Done
+4) small fixes to turn the app in a react way made app, for example 
 
 So just follow the react_steps structure?
-
-
-remembering the problem... The problem is how do I keep the state in top component if in buttons comp there were click handlers that were supposed to change the state, they could change it if the state was inside buttons comp of course, but otherwise? What I need is to keep the state in the top comp, so for ex. to change the displayed stage which is different comp. 
 
 
 Questions
 - how to add css class to a component
 
 Problems
-- onclick event inside one component event hanlder inside another?
 - calling inside component (but not inside any component's function) console.log("initial state"); giving Uncaught SyntaxError: Inline Babel script: Unexpected token 
-newboston Boileplate
-- when changing js file have to rerun build command and restsrt server wtf?
 
 
 Problems Solved
+- onclick event inside one component event hanlder inside another?
 - Uncaught TypeError: Cannot read property 'state' of undefined
 console.log(stage);
 next() {
@@ -45,11 +41,11 @@ Multisteps is the one way, every step has its own class with the same structure 
 On React learning path
 Seems like with steps is too tough for me?.. 
 Bucky has too simple tutorials...? https://www.youtube.com/watch?v=TWzA2Ir1ZJc&list=PL6gx4Cwl9DGBuKtLgPR_zWYnrwv-JllpA&index=9  refs
-Ok, seems like Bucky's tuts has some good points at the end, so probably try their code out and understand what is happening in code. Yeah but no scource code available so I will have to spend a hell of a lot of time typing it? And in the end it will turn out to be a crappy tut, becasue now I can't undersstand it thoroughly.
+Ok, seems like Bucky's tuts has some good points at the end, so probably try their code out and understand what is happening in code. Yeah but no source code available so I will have to spend a hell of a lot of time typing it? And in the end it will turn out to be a crappy tut, becasue now I can't undersstand it thoroughly.
 
 Ok, figured out how to pass a function from parent comp to child comp from Bucky's tut. Next: either write my modal steps, either watch Bucky's redux. I think I should try modal steps first and see how I go, if not then redux or maybe something easier to write myself.
 
-ModalSteps: now stuck with highlighting active stage (element) on click and changing question (state).
+ModalSteps: now stuck with highlighting active stage (element) on click and changing question (state). Solved.
 
 React options
 - redux newBoston
@@ -76,6 +72,13 @@ App Structure.
 Comment comp is a child comp. Board is a parent comp.
 
 Scope
+- finish off with css
+ just make basic layout for now, when logics will be finished make a fancy css, maybe just take a template from somewhere (can take those modal_stages)
+- write a fucntion converting array to object ?
+
+
+Scope done
+- limit stages to 1 and max number, so it won't go 0 and minus..
 - Highlight active stage. Change question by clicking on the stage. 
 https://medium.com/@shopsifter/if-you-think-you-need-jquery-in-your-react-app-you-re-doing-it-wrong-77899ed7217e
 pass state to a child
@@ -92,22 +95,11 @@ Ok, i have to write functionaity in next, previous of ModalWindow and pass them 
 
 main thing to do now by clicking on stage num I have to change question (change ModalWindow state). I have to write functionality in next, previous(or other methods?) of ModalWindow and pass them to Stages.
 
-
-- finish off with css
- just make basic layout for now, when logics will be finished make a fancy css, maybe just take a template from somewhere (can take those modal_stages)
-- clickable stages
-- write a fucntion converting array to object
-
-
-Scope done
-- limit stages to 1 and max number, so it won't go 0 and minus..
-
-
 App Logics
 в ModalWindow в render method передается <Stages stage={Stage} stages={stages}/> c state и <Buttons/> в котором передаются хэндлеры (которые находятся в ModalWindow и в которых меняется state, а state передается в <Stages stage={Stage})
 
 
-Problem
+Problems
 - nothing in main.css compiled file?
 
 - Have to pass data array to top comp (ModalWindow) state to use it the same way as the stage.
@@ -124,8 +116,6 @@ this.eachComment = this.eachComment.bind(this);  in constructor
 - webpack scss to css. I will leave it for later. For now just use css.
 
 Problems solved
-- changeStageColor did not work. Solved by adding "return" to component function 
-
 - webpack scss to sass
 https://medium.com/a-beginners-guide-for-webpack-2/using-sass-9f52e447c5ae
 node-sass won't install
